@@ -277,13 +277,9 @@ class Canvas {
   }
   endShape() {
     const wip = this.wip;
-    if (wip.points.length < 3) {
-      this.removeShape(wip); // TODO: message.
-    } else {
-      delete wip.wip;
-      this.selectedPoints = wip.points;
-      this.changedShapes();
-    }
+    delete wip.wip;
+    this.selectedPoints = wip.points;
+    this.changedShapes();
   }
 
   copyLast() {
